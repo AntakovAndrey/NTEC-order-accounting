@@ -9,7 +9,9 @@ CREATE INDEX IF NOT EXISTS idx_positions_name ON positions(name);
 
 CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,
-    full_name TEXT NOT NULL,
+    name TEXT NOT NULL,
+    surname TEXT NOT NULL,
+    patronymic TEXT NOT NULL,
     password TEXT NOT NULL,
     position_id INT NOT NULL,
     FOREIGN KEY (position_id) REFERENCES positions(id)
