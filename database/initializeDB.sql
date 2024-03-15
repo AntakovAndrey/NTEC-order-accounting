@@ -1,5 +1,3 @@
-
-
 -- Подключаемся к созданной базе данных
 \connect "NTEC-Order-Accounting-DB"
 
@@ -11,7 +9,6 @@ CREATE TABLE IF NOT EXISTS positions (
 
 -- Создаем индекс для таблицы "Должность"
 CREATE INDEX IF NOT EXISTS idx_positions_name ON positions(name);
-
 
 -- Создаем таблицу "Пользователи"
 CREATE TABLE IF NOT EXISTS users (
@@ -40,8 +37,6 @@ CREATE TABLE IF NOT EXISTS services (
     category_id INT NOT NULL,
     FOREIGN KEY (category_id) REFERENCES categories(id)
 );
-
-
 
 -- Создаем таблицу "Заказчик"
 CREATE TABLE IF NOT EXISTS customers (
@@ -92,8 +87,6 @@ CREATE TABLE IF NOT EXISTS order_payments (
     FOREIGN KEY (payment_type_id) REFERENCES payment_types(id)
 );
 
-
-
 -- Создаем таблицу "История статусов заказа"
 CREATE TABLE IF NOT EXISTS order_status_history (
     id SERIAL PRIMARY KEY,
@@ -123,5 +116,3 @@ CREATE TABLE IF NOT EXISTS order_services (
     FOREIGN KEY (service_id) REFERENCES services(id),
     FOREIGN KEY (status_id) REFERENCES service_statuses(id)
 );
-
-
