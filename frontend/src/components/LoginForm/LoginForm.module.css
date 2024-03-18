@@ -1,0 +1,15 @@
+.login_form{
+    width: 400px;
+    border: 1px solid #d3d3d3;
+    border-radius: 20px;
+    padding: 0px 50px 0px 50px;
+}   
+
+.login_form_button{
+    margin-top: 15px;
+    width: 100%;
+}
+
+.login_form_input{
+    margin-top: 20px;
+}
