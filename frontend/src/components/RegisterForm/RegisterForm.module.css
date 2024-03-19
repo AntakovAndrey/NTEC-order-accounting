@@ -1,0 +1,19 @@
+.register_form{
+    width: 400px;
+    border-radius: 20px;
+    padding: 0px 50px 0px 50px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}   
+
+.register_form_button{
+    margin-top: 15px;
+    width: 100%;
+}
+
+.register_form_input{
+    margin-top: 20px;
+}
+
+.register_form_select{
+    width: 300px;
+}

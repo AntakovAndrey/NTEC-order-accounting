@@ -9,11 +9,11 @@ function LoginForm()
 {
     const onFinish = (values) => {
         console.log('Received values of form: ', values);
+        //ToDO: add authenticate logic
       };
     return(
         <Form
             className={styles.login_form}
-            name="normal_login"
             onFinish={onFinish}>
             <h1>Вход</h1>
             <Form.Item
@@ -23,7 +23,7 @@ function LoginForm()
                     required: true,
                     message: 'Пожалуйста, введите свой e-mail!',
                 },]}>
-                <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="E-mail" className={styles.login_form_input}/>
+                <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="E-mail" type="email" className={styles.login_form_input}/>
             </Form.Item>
             <Form.Item
                 name="password"
@@ -39,7 +39,7 @@ function LoginForm()
                 Войти
                 </Button>
                 <p>
-                    Нет аккаунта? <Link to='/Register'>Зарегистрируйтесь здесь!</Link>
+                    Нет аккаунта? <Link to='/register'>Зарегистрируйтесь здесь!</Link>
                 </p>
             </Form.Item>
         </Form>
