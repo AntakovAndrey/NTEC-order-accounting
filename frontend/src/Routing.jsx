@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route} from "react-router-dom";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import ClientPage from "./pages/ClientPage/ClientPage";
+import OrderPage from "./pages/OrderPage/OrderPage";
 
 function Routing() {
     return(
@@ -13,6 +14,7 @@ function Routing() {
                     
                     <Route path="/register" element={<RegisterPage/>}/>
                     <Route path="/client/:id" element={<ClientPage/>}/>
+                    <Route path="/order/:id" element={<OrderPage/>}/>
                     <Route path="*"/>
                 </Routes>
            </BrowserRouter>
