@@ -1,9 +1,12 @@
-import { Button,Table,Popconfirm } from "antd";
+import { Button,Table,Popconfirm, Modal} from "antd";
 import {DeleteOutlined, EditOutlined} from "@ant-design/icons"
 import styles from "./AdminPanelTabLayout.module.css"
+import React, { useState } from "react";
 
-function AdminPanelTabLayout(props)
+function AdminPanelTabLayout({ columns, handleDelete, showModal })
 {
+
+
     const defaultColumns=[{
         
         title: 'Действия',
@@ -11,26 +14,21 @@ function AdminPanelTabLayout(props)
         width:"40px",
         render: (_, record) =>
             <div className={styles.row_actions_container}>
-                <Popconfirm title="Sure to delete?" onConfirm={() => props.handleDelete(record.key)}>
+                <Popconfirm title="Удалить эту запись?" onConfirm={() => handleDelete(record.key)}>
                     <DeleteOutlined/>
                 </Popconfirm>
-                <Popconfirm title="Sure to delete?" onConfirm={() => props.handleEdit(record.key)}>
-                    <EditOutlined/>
-                </Popconfirm>
+                <EditOutlined onClick={()=>handleDelete(record.key)}/>
             </div>
     }]
 
-    const tableColumns=props.columns.concat(defaultColumns)
+    const tableColumns=columns.concat(defaultColumns)
     const dataSource=[{name:"fadsf"},{name:"fsdfhsd"}]
 
-    
-    const onAddClick=()=>{
-        console.log(props.modalName)
-    }
 
     return(<div className={styles.tab_container}>
-        <Button onClick={onAddClick}>Добавить</Button>
-        <div className={styles.table}></div>
+        
+        <Button onClick={showModal}>Добавить</Button>
+        {addingModal}
         <Table
             className={styles.table}
             dataSource={dataSource}

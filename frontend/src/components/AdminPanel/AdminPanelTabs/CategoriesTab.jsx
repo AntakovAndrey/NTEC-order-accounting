@@ -2,14 +2,15 @@ import AdminPanelTabLayout from "../../../layouts/AdminPanelTabLayout";
 
 function CategoriesTab()
 {
-    const columns=[
+        const columns=[
         {title: 'Id',
         dataIndex: 'id',},
         {title: 'Название',
         dataIndex: 'name',}
     ]
     return(<>
-        <AdminPanelTabLayout columns={columns} modalName="КатегорииУслуги" />
+        
+        <AdminPanelTabLayout columns={columns} />
     </>)
 }
 
