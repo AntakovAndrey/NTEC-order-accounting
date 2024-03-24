@@ -13,6 +13,7 @@ CREATE TABLE IF NOT EXISTS users (
     surname TEXT NOT NULL,
     patronymic TEXT NOT NULL,
     password TEXT NOT NULL,
+    email TEXT NOT NULL,
     position_id INT NOT NULL,
     FOREIGN KEY (position_id) REFERENCES positions(id)
 );
@@ -38,7 +39,7 @@ CREATE TABLE IF NOT EXISTS customers (
     company_name TEXT NOT NULL,
     contact_person TEXT NOT NULL,
     email TEXT,
-    inn TEXT NOT NULL
+    unp TEXT NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS order_statuses (
@@ -51,7 +52,6 @@ CREATE INDEX IF NOT EXISTS idx_order_statuses_name ON order_statuses(name);
 CREATE TABLE IF NOT EXISTS orders (
     id SERIAL PRIMARY KEY,
     order_date DATE NOT NULL,
-    order_number TEXT NOT NULL,
     customer_id INT NOT NULL,
     status_id INT NOT NULL,
     FOREIGN KEY (customer_id) REFERENCES customers(id),
